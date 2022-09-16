@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cadastro de Alunos</title>
+
+    <link href="img/favicon.ico" rel="icon" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+      rel="stylesheet"
+    />
+
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
+
+    <link href="css/style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="jumbotron jumbotron-fluid mb-5">
+      <div class="container text-center py-5">
+        <h1 class="text-white display-4">Cadastro de Alunos</h1>
+      </div>
+    </div>
+
+    <div class="container-fluid py-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-7">
+            <h6 class="text-info text-uppercase font-weight-bold">
+              Preencha todos os dados!
+            </h6>
+            <div class="contact-form bg-secondary" style="padding: 30px">
+              <div id="success"></div>
+              <form action="/api/aluno" method="post" class="p-5 bg-white">
+                <h2 id="dados" class="h4 text-black mb-5">
+                  Cadastre um novo aluno
+                </h2>
+
+                <div class="row form-group">
+                  <div class="col-md-12">
+                    <label class="text-black" for="name">Nome:</label>
+                    <input
+                      type="text"
+                      id="name"
+                      name="nome"
+                      class="form-control"
+                      placeholder="Nome do aluno"
+                      required
+                    />
+                  </div>
+                </div>
+
+                <div class="row form-group">
+                  <div class="col-md-12">
+                    <label class="text-black" for="email">E-mail:</label>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      class="form-control"
+                      placeholder="E-mail do aluno"
+                      required
+                    />
+                  </div>
+                </div>
+
+                <div class="row form-group">
+                  <div class="col-md-6">
+                    <label class="text-black" for="gender">Gênero:</label>
+                    <select class="form-control" id="gender" name="genero">
+                      <option class="none" value="" selected disabled>
+                        Selecione
+                      </option>
+                      <option value="M">Masculino</option>
+                      <option value="F">Feminino</option>
+                    </select>
+                  </div>
+
+                  <div class="col-md-6">
+                    <label class="text-black" for="age">Idade</label
+                    >&nbsp;&nbsp;<small>Apenas números</small>
+                    <input
+                      id="age"
+                      name="idade"
+                      type="text"
+                      inputmode="numeric"
+                      pattern="\d*"
+                      class="form-control"
+                      placeholder="Ex: 18"
+                      required
+                    />
+                  </div>
+                </div>
+
+                <div class="row form-group">
+                  <div class="col-md-6">
+                    <label class="text-black" for="phone">Celular</label
+                    >&nbsp;&nbsp;<small>Apenas números</small>
+                    <input
+                      id="phone"
+                      name="telefone"
+                      type="text"
+                      inputmode="numeric"
+                      pattern="\d*"
+                      maxlength="11"
+                      class="form-control"
+                      placeholder="Ex: 11 9999-9999"
+                      required
+                    />
+                  </div>
+
+                  <div class="col-md-6">
+                    <label class="text-black" for="estudante">Estudante:</label>
+                    <div class="form-check">
+                      <input
+                        id="yes"
+                        class="form-check-input"
+                        type="radio"
+                        name="estudante"
+                        value="1"
+                        checked
+                      />
+                      <label class="form-check-label" for="exampleRadios1">
+                        Sim
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input
+                        id="no"
+                        class="form-check-input"
+                        type="radio"
+                        name="estudante"
+                        value="0"
+                      />
+                      <label class="form-check-label" for="exampleRadios2">
+                        Não
+                      </label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row form-group">
+                  <div class="col-md-12">
+                    <input
+                      type="submit"
+                      value="Enviar"
+                      class="btn btn-info btn-md"
+                      id="enviar"
+                    />
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="col-lg-4 pb-4 pb-lg-0">
+            ​<picture class="circle-bg">
+              <img
+                src="https://www.sincor.org.br/wp-content/uploads/2016/10/icon-departamento-cadastro.png"
+                alt=""
+                class="img-fluid"
+              />
+            </picture>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="container-fluid bg-dark text-white border-top py-4 px-sm-3 px-md-5"
+    >
+      <div class="row">
+        <div class="col-lg-12 text-center text-md-center">
+          <p class="m-0 text-white">&copy; 2022 Janice Caldeira</p>
+        </div>
+      </div>
+    </div>
+
+    <script src="/js/index.js"></script>
+  </body>
+</html>
